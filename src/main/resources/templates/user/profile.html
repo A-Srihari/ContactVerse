@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{:: #content},~{::title})}">
+<head>
+    <title>Profile Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f0f2f5 !important;
+        }
+
+        .profile-card {
+            max-width: 900px !important;
+            margin: 50px auto !important;
+            border-radius: 15px !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+            overflow: hidden !important;
+            display: flex !important;
+            font-family: Arial, sans-serif !important;
+            background: #fff !important;
+        }
+
+        /* Left Section */
+        .profile-left {
+            flex: 1 !important;
+            background: linear-gradient(135deg, #FF6B6B, #FFD166) !important;
+            color: #fff !important;
+            text-align: center !important;
+            padding: 40px 20px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        .profile-left img {
+            width: 150px !important;
+            height: 150px !important;
+            border-radius: 50% !important;
+            border: 4px solid #fff !important;
+            margin-bottom: 20px !important;
+            object-fit: cover !important;
+        }
+        .profile-left h3 {
+            margin-bottom: 5px !important;
+            font-weight: 600 !important;
+        }
+        .profile-left p {
+            font-size: 15px !important;
+            opacity: 0.9 !important;
+            margin: 0 !important;
+        }
+
+        /* Right Section */
+        .profile-right {
+            flex: 2 !important;
+            padding: 30px !important;
+        }
+        .section-title {
+            font-weight: bold !important;
+            font-size: 18px !important;
+            margin: 20px 0 10px !important;
+            padding-bottom: 5px !important;
+            border-bottom: 1px solid #e0e0e0 !important;
+        }
+        .info-row {
+            display: flex !important;
+            justify-content: space-between !important;
+            margin-bottom: 12px !important;
+            font-size: 15px !important;
+        }
+        .info-row strong {
+            color: #555 !important;
+        }
+        .info-row span {
+            color: #888 !important;
+        }
+
+        /* Social Links */
+        .social-links {
+            margin-top: 20px !important;
+        }
+        .social-links i {
+            font-size: 24px !important;
+            margin: 0 10px !important;
+            color: #fff !important;
+            cursor: pointer !important;
+            transition: transform 0.3s ease !important;
+        }
+        .social-links i:hover {
+            transform: scale(1.1) !important;
+        }
+
+        /* Responsive - Mobile View */
+        @media (max-width: 768px) {
+            .profile-card {
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+            .profile-left {
+                width: 100% !important;
+                padding: 30px !important;
+            }
+            .profile-right {
+                width: 100% !important;
+                padding: 20px !important;
+            }
+            .info-row {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="content" class="container mt-5 px-5">
+
+    <div class="profile-card d-flex flex-column align-items-center " th:if="${loggedInUser != null}">
+        <!-- Left Panel -->
+        <div class="profile-left d-flex flex-column align-items-center w-100 border-bottom border-2 border-dark pb-2 mb-3">
+            <img style="width: 250px; height: 250px; border-radius: 50%;" th:src="${loggedInUserProfilePic}"
+                 onerror="this.src='https://via.placeholder.com/130/ff6b6b/fff?text=No+Image'"
+                 alt="Profile Picture">
+            <h3 data-th-text="${loggedInUserFullName}">User Name</h3>
+            <p data-th-text="${loggedInUserAbout}">About/Role</p>
+
+            <div class="social-links">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Right Panel -->
+        <div class="profile-right w-100">
+            <div class="personal-info w-100">
+                <h1>Personal Info</h1>
+                <hr>
+                <div class="section-title"></div>
+                <div class="info-row">
+                    <strong>Email:</strong>
+                    <span data-th-text="${loggedInUserEmail}"></span>
+                </div>
+                <div class="info-row">
+                    <strong>Phone:</strong>
+                    <span data-th-text="${loggedInUserPhone}"></span>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="account-details w-100">
+                <h1>Account Details</h1>
+                <hr>
+                <div class="info-row">
+                    <strong>User ID:</strong>
+                    <span data-th-text="${loggedInUserId}"></span>
+                </div>
+                <div class="info-row">
+                    <strong>Provider:</strong>
+                    <span data-th-text="${loggedInUserProvider}"></span>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="verification-status w-100">
+                <h1>Verification Status</h1>
+                <hr>
+                <div class="info-row">
+                    <strong>Email Verified:</strong>
+                    <span data-th-text="${loggedInUserEmailVerified}"></span>
+                </div>
+                <div class="info-row">
+                    <strong>Phone Verified:</strong>
+                    <span data-th-text="${loggedInUserPhoneVerified}"></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

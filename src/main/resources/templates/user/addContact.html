@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{:: #content},~{::title})}">
+<head>
+    <title>Add Contact</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .contact-card {
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0px 8px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0px 12px 30px rgba(0,0,0,0.3);
+        }
+        .input-group-text {
+            border: none;
+            border-radius: 8px 0 0 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+        }
+        /* Dark Mode */
+        body.dark-mode .contact-card {
+            background-color: #252e42;
+            color: #fff;
+        }
+        body.dark-mode .input-group-text {
+            background-color: #1b2538;
+            color: #fff;
+        }
+        /* Light Mode */
+        body.light-mode .contact-card {
+            background-color: #ffffff;
+            color: #2b2746;
+        }
+        body.light-mode .input-group-text {
+            background-color: #e9ecef;
+            color: #2b2746;
+        }
+        textarea {
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+<div id="content" class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card contact-card">
+                <div class="card-body">
+                    <!--       message goes here    -->
+                    <div class="mb-3" data-th-replace="~{message :: message}"></div>
+
+                    <h2 class="mb-4 text-center"><strong>Add New Contact</strong></h2>
+
+                    <form data-th-action="@{/user/contact/addContact}" data-th-object="${contactForm}" method="post" enctype="multipart/form-data">
+
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                            <label for="name"></label>
+                            <input type="text"
+                                   id="name"
+                                   autocomplete="off"
+                                   class="form-control"
+                                   placeholder="Contact Name"
+                                   name="name"
+                                   th:field="*{name}" required>
+                        </div>
+                            <p style="color: red" data-th-if="${#fields.hasErrors('name')}">Invalid name</p>
+
+                        <!-- Contact Email -->
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                            <label for="email"></label>
+                            <input type="email"
+                                   id="email"
+                                   autocomplete="off"
+                                   class="form-control"
+                                   placeholder="example@gmail.com"
+                                   name="email"
+                                   th:field="*{email}" required>
+                        </div>
+                        <p style="color: red" data-th-if="${#fields.hasErrors('email')}">Invalid Email</p>
+
+
+                        <!-- Contact Phone -->
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                            <label for="phoneNumber"></label>
+                            <input type="text"
+                                   id="phoneNumber"
+                                   class="form-control"
+                                   placeholder="Phone Number"
+                                   name="phoneNumber"
+                                   th:field="*{phoneNumber}" required>
+                        </div>
+                        <p style="color: red" data-th-if="${#fields.hasErrors('phoneNumber')}">Invalid Phone number</p>
+
+
+                        <!-- Contact Address -->
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fa fa-map-marker-alt"></i></span>
+                            <label for="address"></label>
+                            <textarea class="form-control"
+                                      id="address"
+                                      autocomplete="off"
+                                      placeholder="Address of the contact"
+                                      name="address"
+                                      th:field="*{address}"
+                                      rows="2"></textarea>
+                        </div>
+
+                        <!-- Contact Description -->
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fa fa-align-left"></i></span>
+                            <label for="about"></label>
+                            <textarea class="form-control"
+                                      id="about"
+                                      placeholder="Write about your contact"
+                                      autocomplete="off"
+                                      name="about"
+                                      th:field="*{about}"
+                                      rows="3"></textarea>
+                        </div>
+
+                        <!-- Website -->
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fa fa-globe"></i></span>
+                            <label for="instagram"></label>
+                            <input type="url"
+                                   id="instagram"
+                                   class="form-control"
+                                   placeholder="Website URL"
+                                   name="instagram"
+                                   th:field="*{instagram}">
+                        </div>
+
+                        <!-- LinkedIn -->
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fab fa-linkedin"></i></span>
+                            <label for="linkedin"></label>
+                            <input type="url"
+                                   id="linkedin"
+                                   autocomplete="off"
+                                   class="form-control"
+                                   placeholder="LinkedIn Profile URL"
+                                   name="linkedin"
+                                   th:field="*{linkedin}">
+                        </div>
+
+                        <!-- Profile Picture Upload -->
+                        <div class="mb-3">
+                            <label class="form-label"><i class="fa fa-image"></i> Profile Picture</label>
+                            <label for="profilePic"></label>
+                            <input type="file"
+                                   id="profilePic"
+                                   class="form-control"
+                                   name="profilePic"
+                                   th:field="*{profilePic}"
+                                   onchange="previewImage(event)"
+                                   accept="image/*">
+                        </div>
+
+                        <!-- Favorite Checkbox -->
+                        <div class="form-check mb-3">
+                            <input class="form-check-input"
+                                   type="checkbox"
+                                   autocomplete="off"
+                                   name="favorite"
+                                   id="favorite"
+                                   th:field="*{favorite}">
+                            <label class="form-check-label" for="favorite">
+                                Mark as favourite contact?
+                            </label>
+                        </div>
+
+
+                        <!-- Submit Button -->
+                        <div class="d-flex justify-content-center">
+                            <button type="submit"
+                                    class="btn btn-primary w-50">Save Contact</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+

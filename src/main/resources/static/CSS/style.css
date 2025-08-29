@@ -1,0 +1,443 @@
+/* General dark background and light text */
+.dark-mode {
+    background-color: #16223a !important;
+    color: #f1f1f1 !important;
+}
+.light-mode {
+    background-color: #e2e9fc !important;
+    color: #2b2746 !important;
+}
+
+/* Bootstrap card dark style */
+body.dark-mode .card {
+    background-color: #252e42;
+    color: #ffffff;
+    border: none; /* removes border */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* dark theme shadow */
+}
+body.light-mode .card {
+    background-color: #c8dfff !important;
+    color: #1e1e1e !important;
+    border: none; /* removes border */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* light theme shadow */
+}
+
+body.light-mode .btn-outline-info {
+    border-color: #16223a !important;
+    color: #16223a !important;
+}
+
+
+/* Optional: button tweaks */
+.dark-mode .btn-primary {
+    background-color: #3a76f0;
+    border-color: #3a76f0;
+}
+
+.dark-mode .btn-primary:hover {
+    background-color: #265ecf;
+}
+/* Dark mode input and textarea styling */
+body.dark-mode input.form-control,
+body.dark-mode textarea.form-control {
+    background-color: #1c2537;
+    color: #ffffff;
+    border-color: #444;
+}
+
+/* Light mode input and textarea styling */
+body.light-mode input.form-control,
+body.light-mode textarea.form-control {
+    background-color: #d6e8ff;
+    color: #2b2746;
+    border-color: #ccc;
+}
+
+/* Optional: placeholder color styling for better UX */
+body.dark-mode ::placeholder {
+    color: #bbb;
+}
+
+body.light-mode ::placeholder {
+    color: #888;
+}
+
+
+.signup-card {
+    border-top:13px solid blue !important;
+    border-radius: 15px !important;
+}
+
+/*menu icon color*/
+/* Sidebar toggle button borders based on theme */
+body.dark-mode .navbar-toggler {
+    border: 2px solid #ffffff !important; /* White border in dark mode */
+    color: #ffffff !important; /* Icon color */
+}
+
+body.light-mode .navbar .container a, ul li a {
+    color: #2b2746 !important;
+}
+
+body.light-mode navbar-toggler {
+    border: 2px solid #2b2746 !important; /* Dark border in light mode */
+    color: #2b2746 !important; /* Icon color */
+}
+
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+/* Light theme mobile dropdown background */
+.navbar-light-theme .navbar-collapse {
+    background-color: #6aabfc !important;
+    width: 100%;
+}
+
+/* Dark theme mobile dropdown background */
+.navbar-dark-theme .navbar-collapse {
+    background-color: #11244b !important;
+}
+
+/* ===============================
+   SIDEBAR THEME STYLES
+   =============================== */
+
+/*? === DARK MODE SIDEBAR === */
+body.dark-mode .sidebar {
+    background: linear-gradient(180deg, rgba(18,30,45,0.95), rgba(14,22,36,0.95));
+    border-right: 1px solid rgba(255,255,255,0.03);
+}
+
+body.dark-mode .sidebar .nav-link {
+    color: #cfe3ff;
+}
+body.dark-mode .sidebar .nav-link:hover {
+    background: rgba(255,255,255,0.035);
+    color: #fff;
+}
+body.dark-mode .sidebar .nav-link.active {
+    background: linear-gradient(90deg,#1b3b7d20, rgba(46,110,248,0.06));
+    border-left: 3px solid var(--accent);
+    color: #fff;
+}
+
+body.dark-mode .sidebar .sidebar-brand {
+    color: #ffffff;
+}
+
+body.dark-mode .sidebar img.logo {
+    filter: brightness(1) invert(0); /* Keep original colors */
+}
+body.dark-mode . fa-icons {
+    color: #cfe3ff;
+}
+
+/*? === LIGHT MODE SIDEBAR === */
+
+body.light-mode .sidebar div.title {
+    color: #2b2746 !important;
+}
+
+body.light-mode .sidebar {
+    background: linear-gradient(180deg, rgba(186, 211, 246, 0.95), rgba(209, 219, 255, 0.95));
+    border-right: 1px solid rgba(0,0,0,0.05) !important;
+    color: #2b2746 !important;
+}
+
+body.light-mode .sidebar .nav-link {
+    color: #2b2746 !important;
+}
+body.light-mode .sidebar .nav-link:hover {
+    background: rgba(0,0,0,0.04) !important;
+    color: #000 !important;
+}
+body.light-mode .sidebar .nav-link.active {
+    background: linear-gradient(90deg, rgba(26, 115, 232, 0.15), rgba(46, 110, 248, 0.1)) !important;
+    border-left: 3px solid var(--accent) !important;
+    color: #000 !important;
+}
+
+body.light-mode .sidebar .sidebar-brand {
+    color: #1a1a1a !important;
+}
+
+body.light-mode .sidebar img.logo {
+    filter: brightness(0) invert(0) !important; /* Darken logo for light mode */
+}
+body.light-mode .fa,
+body.light-mode .fab,
+body.light-mode .fas {
+    color: #2b2746 !important; /* Dark text color for light mode */
+}
+body.light-mode .sidebar i.fa-icons {
+    color: #2b2746 !important;
+}
+
+/*?=========== sidebar open/close ============*/
+
+/* Sidebar transitions */
+.sidebar {
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+
+/* When collapsed */
+.sidebar.collapsed {
+    width: 5%; /* Or 60px if you want fixed pixel size */
+}
+
+.sidebar.collapsed .nav-link span,
+.sidebar.collapsed .brand .title {
+    display: none; /* Hide text when collapsed */
+}
+
+.sidebar.collapsed .nav-link {
+    justify-content: center; /* Center icons */
+}
+
+/* Main content transition */
+#main-content {
+    transition: margin-left 0.3s ease, width 0.3s ease;
+    margin-left: var(--sidebar-width);
+}
+
+/* Adjust when collapsed */
+/*body.sidebar-collapsed #main-content {*/
+/*    margin-left: 5%; !* Match collapsed sidebar width *!*/
+/*}*/
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 0;
+        display: none !important;
+    }
+    .sidebar.collapsed {
+        width: 260px;
+    }
+    #main-content {
+        margin-left: 0;
+        padding-left: 0;
+    }
+}
+
+/*? styles for horizontal sidebar bar*/
+#main-content {
+    padding-top: 76px; /* height of navbar */
+    margin-left: var(--sidebar-width);
+    transition: margin-left 0.3s ease;
+}
+
+body.sidebar-collapsed #main-content {
+    margin-left: 50px;
+}
+
+@media (max-width: 992px) {
+    #main-content {
+        width: 100%;
+        margin-left: 0;
+        padding-top: calc(76px + 76px) !important; /* navbar + horizontal sidebar height */
+    }
+    body.sidebar-collapsed #main-content {
+        margin-left: 0;
+    }
+
+    #navbarNav {
+        z-index: 1000 !important;
+    }
+    .sidebar {
+        z-index: 999 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: scroll !important;
+    }
+
+    #sidebar-options {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: scroll !important;
+        flex-wrap: nowrap !important;
+    }
+
+    body.light-mode .sidebar .nav-link span {
+        font-size: 0.75rem;
+        color: #2b2746;
+    }
+    .collapsed {
+        overflow-x: hidden!important;
+    }
+    body.sidebar.collapsed {
+        width: 59px !important;
+    }
+
+}
+
+@media (max-width: 992px) {
+    .collapsed {
+        /*width: 15% !important;*/
+        width: 59px !important;
+    }
+}
+
+@media (max-width: 620px) {
+    .collapsed {
+        width: 40px !important;
+    }
+}
+
+
+/*? prevent menu sidebar menu from reducing its width*/
+@media (max-width: 992px) {
+    /*.navbar-toggler {*/
+    /*    width: 60px !important;*/
+    /*    height: 58px;*/
+    /*    padding: 0;*/
+    /*    display: flex;*/
+    /*    align-items: center;*/
+    /*    justify-content: center;*/
+    /*}*/
+
+    #sidebarToggle {
+        width: 59px !important;
+        /*height: 58px;*/
+        padding: 0;
+    }
+
+    .navbar-toggler-icon {
+        width: 1.5em !important;
+        /*height: 1.5em;*/
+    }
+
+    aside.sidebar.collapsed {
+        width: 59px !important;
+        overflow-x: hidden !important;
+    }
+}
+
+#sidebarToggle {
+    width: 76px !important;
+    /*height: 58px;*/
+    padding: 0;
+}
+
+.navbar-toggler-icon {
+    width: 1.5em !important;
+    height: 1.5em;
+}
+
+aside.sidebar.collapsed {
+    width: 76px !important;
+    overflow-x: hidden !important;
+}
+
+
+@media (max-width: 768px) {
+    #contactsContainer {
+        width: 100% !important;
+        overflow-x: auto !important;
+        flex-wrap: nowrap !important;
+    }
+
+    #contactsTable {
+        width: 100% !important;
+        overflow-x: auto !important;
+    }
+}
+
+#contactsContainer {
+    width: 100% !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+}
+
+#contactsTable {
+    width: 100% !important;
+    overflow-x: auto !important;
+}
+
+.table-Rows {
+    height: 70px !important;
+}
+
+.table-Rows > td {
+    height: 70px !important;
+}
+
+.contact-pfp {
+    width: 50px !important;     /* Set a fixed width */
+    height: 50px !important;    /* Set a fixed height */
+    object-fit: cover !important; /* Keeps aspect ratio without distortion */
+    border-radius: 50% !important; /* Makes it circular */
+}
+
+#contactProfile {
+    width: 100px !important;
+    height: 100px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    border: 4px solid #1fff23 !important;
+}
+
+
+@media (min-width: 1025px) {
+    .address-td {
+        width: 20% !important;
+    }
+}
+
+.actionBtn {
+    height: 25px !important;
+    width: 25px !important;
+}
+
+.action-icons {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    font-size: 0.7rem !important;
+}
+
+/*! css for modal*/
+body.dark-mode .modal-content {
+    background-color: #16223a !important;
+    color: #fff !important;
+
+    >h1, b, span, button, p {
+        color: #fff !important;
+    }
+
+    #contactName {
+        font-weight: bold;
+    }
+
+}
+
+a#contactInstagram,
+a#contactLinkedin,
+a#contactSocial {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+a#contactInstagram:hover,
+a#contactLinkedin:hover,
+a#contactSocial:hover {
+    text-decoration: underline !important;
+}
+
+
+body.light-mode .muteText {
+    text-emphasis-color: #737882 !important;
+}
+
+body.dark-mode .muteText {
+    text-emphasis-color: #d6e8ff !important;
+}
+
+body.dark-mode .profile-left {
+    border-bottom: 2px solid white !important;
+}

@@ -1,0 +1,30 @@
+<div data-th-fragment="contactModal" id="contact-modal-id" class="contact-modal-class ">
+    <div class="modal fade" id="myCenteredScrollableModal" tabindex="-1" aria-labelledby="myCenteredScrollableModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-dark" id="myCenteredScrollableModalLabel"> <span class="text-dark h1" id="contactName"></span> </h5>
+<!--                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+                </div>
+                <div class="modal-body text-dark">
+                    <img id="contactProfile" src="" alt="Profile Picture" width="100" class="mb-2"/>
+                    <p><b>Email:</b> <span id="contactEmail"></span></p>
+                    <p><b>Phone:</b> <span id="contactPhone"></span></p>
+                    <p><b>Address:</b> <span id="contactAddress"></span></p>
+                    <p><b>About:</b> <span id="contactAbout"></span></p>
+                    <p><b>Favorite:</b> <span id="contactFavorite"></span></p>
+                    <p><b>Instagram:</b> <a class="contact-links" id="contactInstagram" href="#" target="_blank"></a></p>
+                    <p><b>LinkedIn:</b> <a class="contact-links" id="contactLinkedin" href="#" target="_blank"></a></p>
+                    <p><b>Social Links:</b> <a class="contact-links" id="contactSocial" href="#" target="_blank"></a></p>
+                </div>
+
+                <div class="modal-footer text-dark text-center d-flex justify-content-center space-between">
+                    <p>Press Esc or click outside the card to close it.</p>
+                    <button class="btn btn-primary edit-contact-btn" data-id="">
+                        <i class="fa-solid fa-pen-to-square"></i> Edit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

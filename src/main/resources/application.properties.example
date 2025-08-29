@@ -1,0 +1,29 @@
+spring.application.name=ContactVerse
+
+# Database (Aiven)
+spring.datasource.url=jdbc:mysql://<HOST>:<PORT>/<DB>?sslMode=REQUIRED
+spring.datasource.username=<USERNAME>
+spring.datasource.password=<PASSWORD>
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+spring.jpa.properties.hibernate.format_sql=true
+
+# Google Login
+spring.security.oauth2.client.registration.google.client-id=<GOOGLE_CLIENT_ID>
+spring.security.oauth2.client.registration.google.client-secret=<GOOGLE_CLIENT_SECRET>
+
+# GitHub Login
+spring.security.oauth2.client.registration.github.client-id=<GITHUB_CLIENT_ID>
+spring.security.oauth2.client.registration.github.client-secret=<GITHUB_CLIENT_SECRET>
+
+# Facebook Login
+spring.security.oauth2.client.registration.facebook.client-id=<FACEBOOK_CLIENT_ID>
+spring.security.oauth2.client.registration.facebook.client-secret=<FACEBOOK_CLIENT_SECRET>
+
+# Cloudinary
+cloudinary.cloud-name=<CLOUD_NAME>
+cloudinary.api-key=<CLOUDINARY_API_KEY>
+cloudinary.api-secret=<CLOUDINARY_API_SECRET>

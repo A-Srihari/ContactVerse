@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{:: #content},~{::title})}">
+<head>
+  <title>Sign Up page</title>
+</head>
+<body>
+<div id="content" class="gap-4">
+
+
+  <div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-6">
+        <div class="card signup-card" >
+          <div class="card-body">
+
+          <!--       message goes here    -->
+            <div data-th-replace="~{message :: message}"></div>
+
+            <h1 class="mt-2 mb-3"><strong>Sign-Up Here</strong></h1>
+
+
+            <form data-th-action="@{/register}"
+                  method="post"
+                  enctype="multipart/form-data"
+                  data-th-object="${userForm}"
+            >
+              <div class="mb-3">
+                <label for="username" class="form-label"><h6><strong>Username</strong></h6></label>
+                <input type="text" class="form-control" id="username" name="username" data-th-field="*{name}" required placeholder="Enter Username">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label"><h6><strong>Email</strong></h6></label>
+                <input type="email" class="form-control" id="email" name="email" data-th-field="*{email}" required placeholder="example@email.com">
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label"><h6><strong>Password</strong></h6></label>
+                <input type="password" class="form-control" id="password" name="password" data-th-field="*{password}" required placeholder="Password">
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label"><h6><strong>Mobile Number</strong></h6></label>
+                <input type="text" class="form-control" id="phone" name="phone" data-th-field="*{phoneNumber}" required placeholder="Phone Number">
+              </div>
+              <div class="mb-3">
+                <label for="about" class="form-label"><h6><strong>About</strong></h6></label>
+                <textarea class="form-control" id="about" name="about" rows="3" data-th-field="*{about}" style="resize: none;" placeholder="Write something about yourself"></textarea>
+              </div>
+                <div class="mb-3">
+                    <label class="form-label"><strong>Profile Picture</strong></label>
+                    <input type="file"
+                           id="profilePicture"
+                           class="form-control"
+                           name="profilePicture"
+                           accept="image/*">
+                </div>
+              <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary border border-3 border-white w-50">Register</button>
+              </div>
+
+
+            </form>
+
+              <meta name="_csrf" data-th-content="${_csrf.token}"/>
+              <meta name="_csrf_header" data-th-content="${_csrf.headerName}"/>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
+
