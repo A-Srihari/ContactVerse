@@ -62,10 +62,10 @@ public class SecurityConfig {
                  .successHandler(authenticationSuccessHandler)  // Custom handler for OAuth2 success
         );
 
-        // Enforce HTTPS for all requests
-        httpSecurity.requiresChannel(channel ->
-            channel.anyRequest().requiresSecure()
-        );
+        // // Enforce HTTPS for all requests
+        // httpSecurity.requiresChannel(channel ->
+        //     channel.anyRequest().requiresSecure()
+        // );
 
         // CSRF disable (optional, for APIs)
         httpSecurity.csrf(csrf -> csrf.disable());
