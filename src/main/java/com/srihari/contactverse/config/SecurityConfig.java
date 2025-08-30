@@ -49,6 +49,10 @@ public class SecurityConfig {
                     .anyRequest().permitAll() // Permit all other requests
         );
 
+        httpSecurity.requiresChannel(channel ->
+                channel.anyRequest().requiresSecure()
+        );
+
         httpSecurity
                 .formLogin(formLogin ->
             formLogin.loginPage("/login").permitAll() // Custom login page
@@ -61,6 +65,7 @@ public class SecurityConfig {
        httpSecurity.requiresChannel(channel ->
     channel.anyRequest().requiresSecure()
 );
+
 
 
 //        httpSecurity.csrf(AbstractHttpConfigurer::disable);

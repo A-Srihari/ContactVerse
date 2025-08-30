@@ -48,7 +48,7 @@
                         <h2 class="text-center mb-3">Login with</h2>
 
                         <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 mb-3">
-                            <a href="http://localhost:8080/oauth2/authorization/google"
+                            <a th:href="@{/oauth2/authorization/google}"
                                class="btn d-flex align-items-center gap-2 px-3 py-2 w-100 w-md-auto justify-content-center"
                                style="background-color: #ffffff; color: #000000; border: 1px solid #ccc; border-radius: 8px;"
                                onmouseover="this.style.backgroundColor='#f1f1f1'"
@@ -59,7 +59,7 @@
                                 <span style="font-weight: 500;">Login with Google</span>
                             </a>
 
-                            <a href="http://localhost:8080/oauth2/authorization/github"
+                            <a th:href="@{/oauth2/authorization/github}"
                                class="btn d-flex align-items-center gap-2 px-3 py-2 w-100 w-md-auto justify-content-center"
                                style="background-color: #24292e; color: #ffffff; border-radius: 8px;"
                                onmouseover="this.style.backgroundColor='#1b1f23'"
