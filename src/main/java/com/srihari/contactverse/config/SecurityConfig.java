@@ -68,7 +68,7 @@ public class SecurityConfig {
         // );
 
         // CSRF disable (optional, for APIs)
-        httpSecurity.csrf(csrf -> csrf.disable());
+        // httpSecurity.csrf(csrf -> csrf.disable());
 
         return httpSecurity.build();
     }
