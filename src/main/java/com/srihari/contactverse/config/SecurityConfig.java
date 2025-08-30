@@ -58,6 +58,9 @@ public class SecurityConfig {
                 .usernameParameter("email") // Username field
                 .passwordParameter("password") // Password field
         );
+        http.requiresChannel(channel ->
+            channel.anyRequest().requiresSecure()
+        );
 
 //        httpSecurity.csrf(AbstractHttpConfigurer::disable);
         httpSecurity.logout(logoutForm -> {
