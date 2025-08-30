@@ -59,7 +59,7 @@ public class SecurityConfig {
                 .requiresChannel(channel ->
                         channel.anyRequest().requiresSecure()
                 )
-                // .csrf(AbstractHttpConfigurer::disable); 
+                .csrf(AbstractHttpConfigurer::disable); 
 
         return httpSecurity.build();
     }
