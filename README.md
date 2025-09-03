@@ -2,8 +2,8 @@
 <p>ContactVerse is a full-stack contact management application that allows users to securely store, manage, and organize their contacts. It features authentication, profile image uploads (via Cloudinary), and a clean UI.</p>
 
 # <b>Features</b>
-<li>User Authentication – Secure login & signup with Spring Security</li>
 <li>Contact Management – Add, edit, delete, and search contacts</li>
+<li>User Authentication – Secure login & signup with Spring Security</li>
 <li>Profile Image Upload – Cloud storage integration (Cloudinary)</li>
 <li>Database Integration – MySQL hosted on Aiven</li>
 <li>Responsive Frontend – Built with HTML, CSS, JS, Bootstrap</li>
@@ -25,4 +25,4 @@
 <li>Git & Github</li>
 <li>Render & Railway</li>
 <br></br>
-Live Demo : https://contactverse-production.up.railway.app/
+Live Demo : <a href="https://contactverse-production.up.railway.app/" target="_blank">https://contactverse-production.up.railway.app/</a>
