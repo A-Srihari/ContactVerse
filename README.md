@@ -25,6 +25,5 @@
 <li>Git & Github</li>
 <li>Render & Railway</li>
 <br></br>
-Live Demo : https://contactverse-production.up.railway.app/    (or)
-            https://contactverse.onrender.com
+Live Demo : https://contactverse.onrender.com
   
