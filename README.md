@@ -26,4 +26,5 @@
 <li>Render & Railway</li>
 <br></br>
 Live Demo : https://contactverse.onrender.com
+(NOTE: Incase the site project doesn't show up immediately, please wait for 3-5 minutes for Render server to start )
   
